@@ -897,7 +897,11 @@ TEST_F(LdbCmdTest, LoadCFOptionsAndOverride) {
   ColumnFamilyHandle* cf_handle;
   ColumnFamilyOptions cf_opts;
   cf_opts.num_levels = 20;
-  ASSERT_OK(db->CreateColumnFamily(cf_opts, "cf1", &cf_handle));
+  ASSERT_OK(db->CreateColumnFamily(cf_opts, 
+  
+                "cf1", 
+  
+  &cf_handle));
 
   delete cf_handle;
   delete db;
